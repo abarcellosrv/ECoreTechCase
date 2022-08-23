@@ -10,7 +10,7 @@ class Person {
         if (!validateName(name)){
             throw "Invalid Name";
         }
-        this.name = name;
+        this.name = this.makeNameCapitalized(name);
     }
     setAge(age) { 
         if(!validateAge(Number(age))){
@@ -35,6 +35,15 @@ class Person {
         } else if (age >= 65) {
             this.ageGroup = "Elderly";
         }
+    }
+
+    makeNameCapitalized(name) {
+        const nameParts = name.split(" ");
+        for (let i = 0; i < nameParts.length; i++) {
+            nameParts[i] = nameParts[i][0].toUpperCase() + nameParts[i].substr(1);
+        }
+
+        return nameParts.join(" ");
     }
 }
 
