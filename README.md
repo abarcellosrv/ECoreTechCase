@@ -34,7 +34,7 @@ npm run human-repository
 
  1. [Add human](#add-human-a-nameadd-humana) 
  2. [List by age](#list-by-age-a-namelist-agea)
- 3. [List by name](#list-by-name-a-namelist-namea))
+ 3. [List by name](#list-by-name-a-namelist-namea)
  4. [List by age group](#list-by-age-group-a-namelist-groupa)
  5. [Exit](#exit-a-nameexita)
 
