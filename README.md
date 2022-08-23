@@ -49,11 +49,11 @@ npm run human-repository
 
 #### **List by age** <a name="list-age"></a>
 
-1. When prompted, enter ```2``` to see list of all humans ordered by age.
+1. When prompted, enter ```2``` to see list of all humans ordered by age (and alphabetically in case of identical ages).
 
 #### **List by name** <a name="list-name"></a>
 
-1. When prompted, enter ```3``` to see list of all humans ordered alphabetically.
+1. When prompted, enter ```3``` to see list of all humans ordered alphabetically, disregarding ages.
 
 #### **List by age group** <a name="list-group"></a>
 
