@@ -25,7 +25,12 @@ function ageGroupOptions() {
 
 function addedHumanConfirmation(person) {
     console.log("You wish to add the following person: ");
-    person.toString();
+    console.log(person.toString());
     console.log("Is this correct?");
     console.log("If so, enter 1 to confirm");
 }
+
+function closingMessage() {
+    console.log("Thank you for using the Human Repository! Hope to see you again soon!");
+}
+ module.exports = {greeting, menuItems, ageGroupOptions, addedHumanConfirmation}

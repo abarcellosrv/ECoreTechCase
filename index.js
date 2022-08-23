@@ -1,6 +1,7 @@
 const Person = require('./Person');
 const People = require('./People');
 const readline = require('readline');
+const { greeting, menuItems, ageGroupOptions, addedHumanConfirmation } = require('./text');
 
 const askQuestion = (theQuestion) => {
     return new Promise((resolve, reject) => {
@@ -11,6 +12,7 @@ const askQuestion = (theQuestion) => {
         }
     })
 }
+greeting();
 
 var rl = readline.createInterface({
     input: process.stdin,
@@ -20,36 +22,50 @@ const people = new People();
 
 async function waitForUserInput() {
 
-    const answer = await askQuestion("Command: ")
-    if (answer == "add") {
-        var person = new Person("", -1);
 
-        while (person.name.length <= 1) {
-            const name = await askQuestion("NAME");
+    menuItems();
+    const answer = await askQuestion("Option ")
+    if (answer == 1) {
 
-            try {
-                person.setName(name);
-            } catch (exception) {
-                console.log(exception);
+        var confirmation = 0;
+        do {
+            var person = new Person("", -1);
+
+            while (person.name.length <= 1) {
+                const name = await askQuestion("NAME");
+
+                try {
+                    person.setName(name);
+                } catch (exception) {
+                    console.log(exception);
+                }
             }
-        }
-        while (person.age < 0) {
-            const age = await askQuestion("Age");
-            try {
-                person.setAge(age);
-                person.setCategory(age);
-            } catch (exception) {
-                console.log(exception);
+            while (person.age < 0) {
+                const age = await askQuestion("Age");
+                try {
+                    person.setAge(age);
+                    person.setCategory(age);
+                } catch (exception) {
+                    console.log(exception);
+                }
             }
+            addedHumanConfirmation(person);
+            const answerConfirmation = await askQuestion("[1] Yes | [2] No");
+            confirmation = answerConfirmation;
+
+            if(answerConfirmation == 1) { 
+                people.add(person); 
+            } else {
+                console.log("Person not added. Try again.");
+            }            
         }
-        people.add(person);
-        console.log(person);
+        while (confirmation != 1)
 
     }
-    if (answer == "list") {
-        people.list();
+    if (answer == 2) {
+        people.listAgeAlpha();
     }
-    if (answer == "exit") {
+    if (answer == 5) {
         rl.close();
     } else {
         waitForUserInput();
