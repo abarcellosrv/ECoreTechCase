@@ -44,7 +44,7 @@ async function waitForUserInput() {
                 const age = await askQuestion("Age");
                 try {
                     person.setAge(age);
-                    person.setCategory(age);
+                    person.setageGroup(age);
                 } catch (exception) {
                     console.log(exception);
                 }
@@ -64,6 +64,30 @@ async function waitForUserInput() {
     }
     if (answer == 2) {
         people.listAgeAlpha();
+    }
+
+    if (answer == 3) {
+        people.listAlpha();
+    }
+
+    if (answer == 4) {
+        ageGroupOptions();
+        const ageGroupOption = await askQuestion("Option ");
+        switch(ageGroupOption) {
+            case '1':
+                people.listAgeGroup("Child");
+                break;
+            case '2':
+                people.listAgeGroup("Teenager");
+                break;
+            case '3':
+                people.listAgeGroup("Adult");
+                break;
+            case '4':
+                people.listAgeGroup("Elderly");
+                break;
+        }
+        
     }
     if (answer == 5) {
         rl.close();

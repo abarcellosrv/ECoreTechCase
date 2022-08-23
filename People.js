@@ -26,12 +26,9 @@ class People {
         }
     }
 
-    filterAgeGroup(person, ageGroup) {
-        return person.ageGroup == ageGroup;
-    }
-
-    listAgeGroup(){
-        const filteredList = this.people.filter(this.filterAgeGroup);
+    
+    listAgeGroup(ageGroup){
+        const filteredList = this.people.filter(person => person.ageGroup == ageGroup );
         for (let i = 0; i < filteredList.length; i++) {
             console.log(filteredList[i].toString());
         }

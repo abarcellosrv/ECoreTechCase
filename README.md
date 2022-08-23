@@ -2,7 +2,7 @@
 
 - [**Welcome to the Human Repository!**](#welcome-to-the-human-repository)
   - [**Instructions:**](#instructions)
-      - [To run this system you need:](#to-run-this-system-you-need)
+      - [Requirements:](#requirements)
     - [**Install**](#install)
     - [**Running app**](#running-app)
     - [**Command Options**](#command-options)
@@ -15,7 +15,7 @@
 
 ## **Instructions:**
 
-#### To run this system you need:
+#### Requirements:
  - Node.js version: v16.17.0
  - npm version: 8.15.0 
   
@@ -32,11 +32,11 @@ npm run human-repository
 ```
  ### **Command Options**
 
- 1. [Add human](#add-human) 
- 2. List by age
- 3. List by name
- 4. List by age group
- 5. Exit
+ 1. [Add human](#add-human-a-nameadd-humana) 
+ 2. [List by age](#list-by-age-a-namelist-agea)
+ 3. [List by name](#list-by-name-a-namelist-namea))
+ 4. [List by age group](#list-by-age-group-a-namelist-groupa)
+ 5. [Exit](#exit-a-nameexita)
 
 #### **Add human** <a name="add-human"></a>
 
@@ -65,10 +65,3 @@ npm run human-repository
 
 1. When prompted, enter ```5``` to exit repository.
 2. If you wish to interact with the repository again, follow instructions on [Running App](#running-app)
-
-
-
-
-
-
-

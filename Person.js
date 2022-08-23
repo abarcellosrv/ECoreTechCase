@@ -3,7 +3,7 @@ class Person {
     constructor(name, age) {
         this.name = name;
         this.age = Number(age);
-        this.category = this.setCategory(age);
+        this.ageGroup = this.setageGroup(age);
     }
 
     setName(name) {
@@ -22,18 +22,18 @@ class Person {
     getAge() { return this.age; }
 
     toString() {
-        return this.name + " - " + this.age + " - " + this.category;
+        return this.name + " - " + this.age + " - " + this.ageGroup;
     }
 
-    setCategory(age) {
+    setageGroup(age) {
         if (age >= 0 && age <= 12) {
-            this.category = "Child";
+            this.ageGroup = "Child";
         } else if (age >= 13 && age <= 19) {
-            this.category = "Teenager";
+            this.ageGroup = "Teenager";
         } else if (age >= 20 && age < 65) {
-            this.category = "Adult"
+            this.ageGroup = "Adult"
         } else if (age >= 65) {
-            this.category = "Elderly";
+            this.ageGroup = "Elderly";
         }
     }
 }
